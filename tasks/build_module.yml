@@ -1,3 +1,4 @@
+---
 - name: Check whether upload_module exists
   stat:
     path: "/usr/lib64/nginx/modules/ngx_http_upload_module.so"
