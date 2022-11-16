@@ -13,8 +13,9 @@
 
 - name: Install Nginx
   dnf:
-      name: nginx
-      state: present
+    name:
+      - nginx
+    state: present
   notify:
     - Enable and start Nginx service
   become: true
