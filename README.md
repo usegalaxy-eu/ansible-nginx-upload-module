@@ -1,13 +1,13 @@
 # Ansible role for building the Nginx upload module
 
-Ansible role for building Nginx upload module from module source code and installing it into Nginx for RHEL 9 systems.
+Ansible role for building Nginx upload module from module source code and installing it into Nginx for RHEL 8 and 9 systems.
 
 This role was adapted from [nginx-upload-module](https://github.com/usegalaxy-au/infrastructure/tree/master/roles/nginx-upload-module)
 
 ### Role workflow
 
   1. Install `epel-release` package
-  2. Enable `CRB` (PowerTools) repository
+  2. Enable `CRB` (RHEL 9), and `PowerTools` (RHEL 8) repository
   3. Install `nginx` package from systems `AppStream` repository.
   4. Enable and start `nginx` service
   5. Build nginx upload module dynamically from the source code
@@ -17,11 +17,11 @@ This role was adapted from [nginx-upload-module](https://github.com/usegalaxy-au
 
 ### Requirements
 
-- Rocky Linux 9 (Should also work on RHEL 9 derivatives)
+- Rocky Linux 8 or 9
 
 #### Tested on
 
-- Rocky Linux 9
+- Rocky Linux 8 and 9
 
 ### Role Variables
 
