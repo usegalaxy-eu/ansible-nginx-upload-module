@@ -6,10 +6,17 @@
     state: present
   become: true
 
+- name: Enable PowerTools repository
+  ansible.builtin.command:
+    cmd: dnf config-manager --set-enabled powertools
+  become: true
+  when: ansible_distribution == 'CentOS' and ansible_distribution_major_version == '8'
+
 - name: Enable CRB (PowerTools) repository
   ansible.builtin.command:
     cmd: dnf config-manager --set-enabled crb
   become: true
+  when: ansible_distribution == 'CentOS' and ansible_distribution_major_version == '9'
 
 - name: Install Nginx
   ansible.builtin.dnf:
